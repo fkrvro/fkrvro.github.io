@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HTTP协议 | 自留地</title>
+  <meta name="keywords" content=" tcp/ip ">
+  <meta name="description" content="HTTP协议 | 自留地">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="标签">
+<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta property="og:site_name" content="自留地">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-12T06:32:30.997Z">
+<meta property="article:modified_time" content="2020-02-06T09:45:19.822Z">
+<meta property="article:author" content="fkrvro">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/school-book.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="自留地" type="application/atom+xml">
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>fkrvro</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(33)</small></div></li>
+    
+        
+            
+            <li><div data-rel="网络基础">网络基础<small>(12)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="服务搭建">服务搭建<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="工具手册">工具手册<small>(8)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="编程基础">编程基础<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="漏洞详解">漏洞详解<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="编程手册">编程手册<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="错误解决">错误解决<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="面经总结">面经总结<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="33">
+<input type="hidden" id="yelog_site_word_count" value="106.1k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="以 in: 开头进行全文搜索" />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color4">tcp/ip协议</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">http服务</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">系统引导</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">后渗透工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">php</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Python</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">文本处理</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">web漏洞</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">tcp/ip</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">C&C++</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">shell编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">文件处理</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">面经</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">注入工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">环境搭建</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class="网络基础 "
+           href="/2020/01/22/ARP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="ARP协议">ARP协议</span>
+            <span class="post-date" title="2020-01-22 23:32:12">2020/01/22</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/12/DHCP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="DHCP协议">DHCP协议</span>
+            <span class="post-date" title="2020-01-12 23:29:23">2020/01/12</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/11/FTP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="FTP协议">FTP协议</span>
+            <span class="post-date" title="2020-01-11 23:28:33">2020/01/11</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/07/DNS%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="DNS协议">DNS协议</span>
+            <span class="post-date" title="2020-01-07 12:25:02">2020/01/07</span>
+        </a>
+        
+        <a  class="服务搭建 "
+           href="/2020/02/26/LAMP%E5%AE%89%E8%A3%85/"
+           data-tag="http服务"
+           data-author="" >
+            <span class="post-title" title="LAMP安装">LAMP安装</span>
+            <span class="post-date" title="2020-02-26 13:57:56">2020/02/26</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/17/ICMP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="ICMP协议">ICMP协议</span>
+            <span class="post-date" title="2020-01-17 23:31:31">2020/01/17</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/15/IP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="IP协议">IP协议</span>
+            <span class="post-date" title="2020-01-15 13:31:09">2020/01/15</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/01/Masscan%E6%89%8B%E5%86%8C/"
+           data-tag="网络工具"
+           data-author="" >
+            <span class="post-title" title="Masscan手册">Masscan手册</span>
+            <span class="post-date" title="2020-02-01 13:24:43">2020/02/01</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/08/GRUB%E6%89%8B%E5%86%8C/"
+           data-tag="系统引导"
+           data-author="" >
+            <span class="post-title" title="GRUB手册">GRUB手册</span>
+            <span class="post-date" title="2020-02-08 23:40:46">2020/02/08</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/02/NC%E6%89%8B%E5%86%8C/"
+           data-tag="网络工具"
+           data-author="" >
+            <span class="post-title" title="NC手册">NC手册</span>
+            <span class="post-date" title="2020-02-02 10:24:46">2020/02/02</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/01/28/Metasploit%E6%89%8B%E5%86%8C/"
+           data-tag="后渗透工具"
+           data-author="" >
+            <span class="post-title" title="Metasploit手册">Metasploit手册</span>
+            <span class="post-date" title="2020-01-28 23:25:12">2020/01/28</span>
+        </a>
+        
+        <a  class="编程基础 "
+           href="/2020/02/17/PHP%E5%8F%98%E9%87%8F/"
+           data-tag="php"
+           data-author="" >
+            <span class="post-title" title="PHP变量">PHP变量</span>
+            <span class="post-date" title="2020-02-17 17:48:27">2020/02/17</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/13/SMTP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="SMTP协议">SMTP协议</span>
+            <span class="post-date" title="2020-01-13 23:29:57">2020/01/13</span>
+        </a>
+        
+        <a  class="编程基础 "
+           href="/2020/02/17/Python%E5%8F%98%E9%87%8F/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="Python变量">Python变量</span>
+            <span class="post-date" title="2020-02-17 18:39:56">2020/02/17</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/09/SSH%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="SSH协议">SSH协议</span>
+            <span class="post-date" title="2020-01-09 23:26:16">2020/01/09</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/06/VIM%E6%89%8B%E5%86%8C/"
+           data-tag="文本处理"
+           data-author="" >
+            <span class="post-title" title="VIM手册">VIM手册</span>
+            <span class="post-date" title="2020-02-06 00:21:49">2020/02/06</span>
+        </a>
+        
+        <a  class="漏洞详解 "
+           href="/2020/02/26/SSRF%E6%BC%8F%E6%B4%9E/"
+           data-tag="web漏洞"
+           data-author="" >
+            <span class="post-title" title="SSRF漏洞">SSRF漏洞</span>
+            <span class="post-date" title="2020-02-26 13:22:09">2020/02/26</span>
+        </a>
+        
+        <a  class="漏洞详解 "
+           href="/2020/02/27/XSS%E6%BC%8F%E6%B4%9E/"
+           data-tag="web漏洞"
+           data-author="" >
+            <span class="post-title" title="XSS漏洞">XSS漏洞</span>
+            <span class="post-date" title="2020-02-27 12:41:38">2020/02/27</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/19/TCP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="TCP协议">TCP协议</span>
+            <span class="post-date" title="2020-01-19 23:31:57">2020/01/19</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/21/UDP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="UDP协议">UDP协议</span>
+            <span class="post-date" title="2020-01-21 09:32:02">2020/01/21</span>
+        </a>
+        
+        <a  class="服务搭建 "
+           href="/2020/02/26/WAMP%E5%AE%89%E8%A3%85/"
+           data-tag="http服务"
+           data-author="" >
+            <span class="post-title" title="WAMP安装">WAMP安装</span>
+            <span class="post-date" title="2020-02-26 13:58:02">2020/02/26</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/05/http%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip"
+           data-author="" >
+            <span class="post-title" title="HTTP协议">HTTP协议</span>
+            <span class="post-date" title="2020-01-05 14:42:37">2020/01/05</span>
+        </a>
+        
+        <a  class="编程基础 "
+           href="/2020/02/20/c-c%E5%8F%98%E9%87%8F/"
+           data-tag="C&amp;C++"
+           data-author="" >
+            <span class="post-title" title="C&amp;C++变量">C&amp;C++变量</span>
+            <span class="post-date" title="2020-02-20 00:18:29">2020/02/20</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/01/25/nmap%E6%89%8B%E5%86%8C/"
+           data-tag="网络工具"
+           data-author="" >
+            <span class="post-title" title="Nmap手册">Nmap手册</span>
+            <span class="post-date" title="2020-01-25 23:24:29">2020/01/25</span>
+        </a>
+        
+        <a  class="编程手册 "
+           href="/2020/02/26/shell%E6%89%8B%E5%86%8C/"
+           data-tag="shell编程"
+           data-author="" >
+            <span class="post-title" title="shell手册">shell手册</span>
+            <span class="post-date" title="2020-02-26 00:06:36">2020/02/26</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/04/wireshark%E6%89%8B%E5%86%8C/"
+           data-tag="网络工具"
+           data-author="" >
+            <span class="post-title" title="wireshark手册">wireshark手册</span>
+            <span class="post-date" title="2020-02-04 16:40:50">2020/02/04</span>
+        </a>
+        
+        <a  class="错误解决 "
+           href="/2020/02/26/%E6%96%87%E4%BB%B6%E4%B9%B1%E7%A0%81/"
+           data-tag="文件处理"
+           data-author="" >
+            <span class="post-title" title="文件乱码">文件乱码</span>
+            <span class="post-date" title="2020-02-26 10:54:27">2020/02/26</span>
+        </a>
+        
+        <a  class="面经总结 "
+           href="/2020/02/26/%E7%AC%94%E8%AF%95%E9%9D%A2%E7%BB%8F/"
+           data-tag="面经"
+           data-author="" >
+            <span class="post-title" title="笔试面经">笔试面经</span>
+            <span class="post-date" title="2020-02-26 11:06:52">2020/02/26</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/25/sqlmap/"
+           data-tag="注入工具"
+           data-author="" >
+            <span class="post-title" title="sqlmap手册">sqlmap手册</span>
+            <span class="post-date" title="2020-02-25 23:24:36">2020/02/25</span>
+        </a>
+        
+        <a  class="服务搭建 "
+           href="/2020/01/03/%E4%B8%BB%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"
+           data-tag="环境搭建"
+           data-author="" >
+            <span class="post-title" title="主机系统安装配置">主机系统安装配置</span>
+            <span class="post-date" title="2020-01-03 14:04:01">2020/01/03</span>
+        </a>
+        
+        <a  class="面经总结 "
+           href="/2020/02/26/%E4%BA%BA%E4%BA%8B%E9%9D%A2%E7%BB%8F/"
+           data-tag="面经"
+           data-author="" >
+            <span class="post-title" title="人事面经">人事面经</span>
+            <span class="post-date" title="2020-02-26 12:17:19">2020/02/26</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/05/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/"
+           data-tag="tcp/ip"
+           data-author="" >
+            <span class="post-title" title="网络模型">网络模型</span>
+            <span class="post-date" title="2020-01-05 14:34:30">2020/01/05</span>
+        </a>
+        
+        <a  class="面经总结 "
+           href="/2020/02/26/%E6%8A%80%E6%9C%AF%E9%9D%A2%E7%BB%8F/"
+           data-tag="面经"
+           data-author="" >
+            <span class="post-title" title="面试面经">面试面经</span>
+            <span class="post-date" title="2020-02-26 11:07:03">2020/02/26</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-http协议" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">HTTP协议</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="网络基础">网络基础</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color2">tcp/ip</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-02-12 16:41:09'>2020-01-05 14:42</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3.7k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#0x01）HTTP协议简介"><span class="toc-text">0x01）HTTP协议简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0x02）HTTP工作原理"><span class="toc-text">0x02）HTTP工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0x03）HTTP特点"><span class="toc-text">0x03）HTTP特点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#0x03-1）无连接"><span class="toc-text">0x03.1）无连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#0x03-2）无状态"><span class="toc-text">0x03.2）无状态</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0x04）HTTP请求方法"><span class="toc-text">0x04）HTTP请求方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0x05）HTTP状态码"><span class="toc-text">0x05）HTTP状态码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0x06）URL"><span class="toc-text">0x06）URL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0x07）HTTP请求格式-请求协议"><span class="toc-text">0x07）HTTP请求格式(请求协议)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0x08）HTTP响应格式（响应协议）"><span class="toc-text">0x08）HTTP响应格式（响应协议）</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-4 i,
+    .toc-level-4 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="0x01）HTTP协议简介"><a href="#0x01）HTTP协议简介" class="headerlink" title="0x01）HTTP协议简介"></a>0x01）HTTP协议简介</h3><p>超文本传输协议（英文：<strong>H</strong>yper<strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol，缩写：HTTP）是一种用于分布式、协作式和超媒体信息系统的应用层协议。HTTP是万维网的数据通信的基础。</p>
+<p>HTTP的发展是由蒂姆·伯纳斯-李于1989年在欧洲核子研究组织（CERN）所发起。HTTP的标准制定由万维网协会（World Wide  Web Consortium，W3C）和互联网工程任务组（Internet Engineering Task  Force，IETF）进行协调，最终发布了一系列的RFC，其中最著名的是1999年6月公布的 RFC  2616，定义了HTTP协议中现今广泛使用的一个版本——HTTP 1.1。</p>
+<p>2014年12月，互联网工程任务组（IETF）的Hypertext Transfer Protocol  Bis（httpbis）工作小组将HTTP/2标准提议递交至IESG进行讨论，于2015年2月17日被批准。  HTTP/2标准于2015年5月以RFC 7540正式发表，取代HTTP 1.1成为HTTP的实现标准。</p>
+<h3 id="0x02）HTTP工作原理"><a href="#0x02）HTTP工作原理" class="headerlink" title="0x02）HTTP工作原理"></a>0x02）HTTP工作原理</h3><p>HTTP协议定义Web客户端如何从Web服务器请求Web页面，以及服务器如何把Web页面传送给客户端。HTTP协议采用了请求/响应模型。客户端向服务器发送一个请求报文，请求报文包含请求的方法、URL、协议版本、请求头部和请求数据。服务器以一个状态行作为响应，响应的内容包括协议的版本、成功或者错误代码、服务器信息、响应头部和响应数据。</p>
+<p>以下是 HTTP 请求/响应的步骤：</p>
+<ol>
+<li><p>客户端连接到Web服务器<br> 一个HTTP客户端，通常是浏览器，与Web服务器的HTTP端口（默认为80）建立一个TCP套接字连接。例如，<a href="http://www.luffycity.com。" target="_blank" rel="noopener">http://www.luffycity.com。</a></p>
+</li>
+<li><p>发送HTTP请求<br> 通过TCP套接字，客户端向Web服务器发送一个文本的请求报文，一个请求报文由请求行、请求头部、空行和请求数据4部分组成。</p>
+</li>
+<li><p>服务器接受请求并返回HTTP响应<br> Web服务器解析请求，定位请求资源。服务器将资源复本写到TCP套接字，由客户端读取。一个响应由状态行、响应头部、空行和响应数据4部分组成。</p>
+</li>
+<li><p>释放连接TCP连接<br> 若connection 模式为close，则服务器主动关闭TCP连接，客户端被动关闭连接，释放TCP连接;若connection 模式为keepalive，则该连接会保持一段时间，在该时间内可以继续接收请求;</p>
+</li>
+<li><p>客户端浏览器解析HTML内容<br> 客户端浏览器首先解析状态行，查看表明请求是否成功的状态代码。然后解析每一个响应头，响应头告知以下为若干字节的HTML文档和文档的字符集。客户端浏览器读取响应数据HTML，根据HTML的语法对其进行格式化，并在浏览器窗口中显示。</p>
+</li>
+</ol>
+<p>例如：在浏览器地址栏键入URL，按下回车之后会经历以下流程：</p>
+<ol>
+<li>浏览器向 DNS 服务器请求解析该 URL 中的域名所对应的 IP 地址;</li>
+<li>解析出 IP 地址后，根据该 IP 地址和默认端口 80，和服务器建立TCP连接;</li>
+<li>浏览器发出读取文件(URL 中域名后面部分对应的文件)的HTTP 请求，该请求报文作为 TCP 三次握手的第三个报文的数据发送给服务器;</li>
+<li>服务器对浏览器请求作出响应，并把对应的 html 文本发送给浏览器;</li>
+<li>释放 TCP连接;</li>
+<li>浏览器将该 html 文本并显示内容; 　</li>
+</ol>
+<h3 id="0x03）HTTP特点"><a href="#0x03）HTTP特点" class="headerlink" title="0x03）HTTP特点"></a>0x03）HTTP特点</h3><h4 id="0x03-1）无连接"><a href="#0x03-1）无连接" class="headerlink" title="0x03.1）无连接"></a>0x03.1）无连接</h4><p><strong>无连接的含义</strong>是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。</p>
+<p>早期这么做的原因是 HTTP 协议产生于互联网，因此服务器需要处理同时面向全世界数十万、上百万客户端的网页访问，但每个客户端（即浏览器）与服务器之间交换数据的间歇性较大（即传输具有突发性、瞬时性），并且网页浏览的联想性、发散性导致两次传送的数据关联性很低，大部分通道实际上会很空闲、无端占用资源。因此 HTTP 的设计者有意利用这种特点将协议设计为<strong>请求时建连接、请求完释放连接，以尽快将资源释放出来服务其他客户端</strong>。</p>
+<p>随着时间的推移，网页变得越来越复杂，里面可能嵌入了很多图片，这时候每次访问图片都需要建立一次 TCP 连接就显得很低效。后来，Keep-Alive 被提出用来解决这效率低的问题。</p>
+<p><strong>Keep-Alive 功能使客户端到服务器端的连接持续有效，当出现对服务器的后继请求时，Keep-Alive 功能避免了建立或者重新建立连接</strong>。市场上的大部分 Web 服务器，包括 iPlanet、IIS 和 Apache，都支持 HTTP  Keep-Alive。对于提供静态内容的网站来说，这个功能通常很有用。但是，对于负担较重的网站来说，这里存在另外一个问题：虽然为客户保留打开的连接有一定的好处，但它同样影响了性能，因为在处理暂停期间，本来可以释放的资源仍旧被占用。当Web服务器和应用服务器在同一台机器上运行时，Keep-Alive 功能对资源利用的影响尤其突出。 </p>
+<p>这样一来，客户端和服务器之间的 HTTP 连接就会被保持，不会断开（超过 Keep-Alive 规定的时间，意外断电等情况除外），当客户端发送另外一个请求时，就使用这条已经建立的连接。</p>
+<h4 id="0x03-2）无状态"><a href="#0x03-2）无状态" class="headerlink" title="0x03.2）无状态"></a>0x03.2）无状态</h4><p><strong>无状态</strong>是指协议对于事务处理没有记忆能力，服务器不知道客户端是什么状态。即我们给服务器发送 HTTP 请求之后，服务器根据请求，会给我们发送数据过来，但是，发送完，不会记录任何信息。</p>
+<p> HTTP 是一个无状态协议，这意味着每个请求都是独立的，Keep-Alive 没能改变这个结果。</p>
+<p> 缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。</p>
+<p> HTTP 协议这种特性有优点也有缺点，优点在于解放了服务器，每一次请求“点到为止”不会造成不必要连接占用，缺点在于每次请求会传输大量重复的内容信息。</p>
+<p> 客户端与服务器进行动态交互的 Web 应用程序出现之后，HTTP  无状态的特性严重阻碍了这些应用程序的实现，毕竟交互是需要承前启后的，简单的购物车程序也要知道用户到底在之前选择了什么商品。于是，两种用于保持  HTTP 连接状态的技术就应运而生了，一个是 Cookie，而另一个则是 Session。</p>
+<p><strong>Cookie可以保持登录信息到用户下次与服务器的会话，换句话说，下次访问同一网站时，用户会发现不必输入用户名和密码就已经登录了</strong>（当然，不排除用户手工删除Cookie）。而还有一些Cookie在用户退出会话的时候就被删除了，这样可以有效保护个人隐私。</p>
+<p> Cookies 最典型的应用是判定注册用户是否已经登录网站，用户可能会得到提示，是否在下一次进入此网站时保留用户信息以便简化登录手续，这些都是  Cookies 的功用。另一个重要应用场合是“购物车”之类处理。用户可能会在一段时间内在同一家网站的不同页面中选择不同的商品，这些信息都会写入  Cookies，以便在最后付款时提取信息。</p>
+<p><strong>与 Cookie 相对的一个解决方案是 Session，它是通过服务器来保持状态的。</strong></p>
+<p> 当客户端访问服务器时，服务器根据需求设置 Session，将会话信息保存在服务器上，同时将标示 Session 的 SessionId  传递给客户端浏览器，浏览器将这个 SessionId 保存在内存中，我们称之为无过期时间的 Cookie。浏览器关闭后，这个 Cookie  就会被清掉，它不会存在于用户的 Cookie 临时文件。</p>
+<p> 以后浏览器每次请求都会额外加上这个参数值，服务器会根据这个 SessionId，就能取得客户端的数据信息。</p>
+<p> 如果客户端浏览器意外关闭，服务器保存的 Session 数据不是立即释放，此时数据还会存在，只要我们知道那个  SessionId，就可以继续通过请求获得此 Session 的信息，因为此时后台的 Session 还存在，当然我们可以设置一个  Session 超时时间，一旦超过规定时间没有客户端请求时，服务器就会清除对应 SessionId 的 Session 信息。</p>
+<h3 id="0x04）HTTP请求方法"><a href="#0x04）HTTP请求方法" class="headerlink" title="0x04）HTTP请求方法"></a>0x04）HTTP请求方法</h3><p>HTTP/1.1协议中共定义了八种方法（也叫“动作”）来以不同方式操作指定的资源：</p>
+<blockquote>
+<p>GET</p>
+</blockquote>
+<p>向指定的资源发出“显示”请求。使用GET方法应该只用在读取数据，而不应当被用于产生“副作用”的操作中，例如在Web Application中。其中一个原因是GET可能会被网络蜘蛛等随意访问。</p>
+<blockquote>
+<p>HEAD</p>
+</blockquote>
+<p>与GET方法一样，都是向服务器发出指定资源的请求。只不过服务器将不传回资源的本文部分。它的好处在于，使用这个方法可以在不必传输全部内容的情况下，就可以获取其中“关于该资源的信息”（元信息或称元数据）。</p>
+<blockquote>
+<p>POST</p>
+</blockquote>
+<p>向指定资源提交数据，请求服务器进行处理（例如提交表单或者上传文件）。数据被包含在请求本文中。这个请求可能会创建新的资源或修改现有资源，或二者皆有。</p>
+<blockquote>
+<p>PUT</p>
+</blockquote>
+<p>向指定资源位置上传其最新内容。</p>
+<blockquote>
+<p>DELETE</p>
+</blockquote>
+<p>请求服务器删除Request-URI所标识的资源。</p>
+<blockquote>
+<p>TRACE</p>
+</blockquote>
+<p>回显服务器收到的请求，主要用于测试或诊断。</p>
+<blockquote>
+<p>OPTIONS</p>
+</blockquote>
+<p>这个方法可使服务器传回该资源所支持的所有HTTP请求方法。用’*’来代替资源名称，向Web服务器发送OPTIONS请求，可以测试服务器功能是否正常运作。</p>
+<blockquote>
+<p>CONNECT</p>
+</blockquote>
+<p>HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。通常用于SSL加密服务器的链接（经由非加密的HTTP代理服务器）。</p>
+<p>注意事项：</p>
+<ol>
+<li>方法名称是区分大小写的。当某个请求所针对的资源不支持对应的请求方法的时候，服务器应当返回状态码405（Method Not Allowed），当服务器不认识或者不支持对应的请求方法的时候，应当返回状态码501（Not Implemented）。</li>
+<li>HTTP服务器至少应该实现GET和HEAD方法，其他方法都是可选的。当然，所有的方法支持的实现都应当匹配下述的方法各自的语义定义。此外，除了上述方法，特定的HTTP服务器还能够扩展自定义的方法。例如PATCH（由 RFC 5789 指定的方法）用于将局部修改应用到资源<em>。</em></li>
+</ol>
+<p>get与post请求的区别</p>
+<ul>
+<li>GET提交的数据会放在URL之后，也就是请求行里面，以?分割URL和传输数据，参数之间以&amp;相连，如EditBook?name=test1&amp;id=123456.（请求头里面那个content-type做的这种参数形式，后面讲） POST方法是把提交的数据放在HTTP包的请求体中.</li>
+<li>GET提交的数据大小有限制（因为浏览器对URL的长度有限制），而POST方法提交的数据没有限制.</li>
+</ul>
+<h3 id="0x05）HTTP状态码"><a href="#0x05）HTTP状态码" class="headerlink" title="0x05）HTTP状态码"></a>0x05）HTTP状态码</h3><p>所有HTTP响应的第一行都是状态行，依次是当前HTTP版本号，3位数字组成的状态代码，以及描述状态的短语，彼此由空格分隔。</p>
+<p>状态代码的第一个数字代表当前响应的类型：</p>
+<ul>
+<li>1xx消息——请求已被服务器接收，继续处理</li>
+<li>2xx成功——请求已成功被服务器接收、理解、并接受</li>
+<li>3xx重定向——需要后续操作才能完成这一请求</li>
+<li>4xx请求错误——请求含有词法错误或者无法被执行</li>
+<li>5xx服务器错误——服务器在处理某个正确请求时发生错误</li>
+</ul>
+<p>虽然 RFC 2616 中已经推荐了描述状态的短语，例如”200 OK”，”404 Not Found”，但是WEB开发者仍然能够自行决定采用何种短语，用以显示本地化的状态描述或者自定义信息。</p>
+<h3 id="0x06）URL"><a href="#0x06）URL" class="headerlink" title="0x06）URL"></a>0x06）URL</h3><p>超文本传输协议（HTTP）的统一资源定位符将从因特网获取信息的五个基本元素包括在一个简单的地址中：</p>
+<ul>
+<li>传送协议。</li>
+<li>层级URL标记符号(为[//],固定不变)</li>
+<li>访问资源需要的凭证信息（可省略）</li>
+<li>服务器。（通常为域名，有时为IP地址）</li>
+<li>端口号。（以数字方式表示，若为HTTP的默认值“:80”可省略）</li>
+<li>路径。（以“/”字符区别路径中的每一个目录名称）</li>
+<li>查询。（GET模式的窗体参数，以“?”字符为起点，每个参数以“&amp;”隔开，再以“=”分开参数名称与数据，通常以UTF8的URL编码，避开字符冲突的问题）</li>
+<li>片段。以“#”字符为起点</li>
+</ul>
+<p>以<a href="http://www.baidu.com:80/index.html?id=250为例" target="_blank" rel="noopener">http://www.baidu.com:80/index.html?id=250为例</a>, 其中：</p>
+<p>http，是协议；<br> <a href="http://www.baidu.com，是服务器；" target="_blank" rel="noopener">www.baidu.com，是服务器；</a><br> 80，是服务器上的默认网络端口号，默认不显示；<br> index.html，是路径（URI：直接定位到对应的资源）；<br> ?id=250，是查询。<br> 大多数网页浏览器不要求用户输入网页中“http://”的部分，因为绝大多数网页内容是超文本传输协议文件。同样，“80”是超文本传输协议文件的常用端口号，因此一般也不必写明。</p>
+<h3 id="0x07）HTTP请求格式-请求协议"><a href="#0x07）HTTP请求格式-请求协议" class="headerlink" title="0x07）HTTP请求格式(请求协议)"></a>0x07）HTTP请求格式(请求协议)</h3><p><img src="/picture/3/1.jpg" alt="请求报文构成"></p>
+<p><img src="/picture/3/2.png" alt="请求报文构成"></p>
+<h3 id="0x08）HTTP响应格式（响应协议）"><a href="#0x08）HTTP响应格式（响应协议）" class="headerlink" title="0x08）HTTP响应格式（响应协议）"></a>0x08）HTTP响应格式（响应协议）</h3><p><img src="/picture/3/3.jpg" alt="响应报文构成"></p>
+<p><img src="/picture/3/4.png" alt="响应报文构成"></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 fkrvro@163.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Yelog</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#tcp/ip协议','#http服务','#网络工具','#系统引导','#后渗透工具','#php','#Python','#文本处理','#web漏洞','#tcp/ip','#C&amp;C++','#shell编程','#文件处理','#面经','#注入工具','#环境搭建',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

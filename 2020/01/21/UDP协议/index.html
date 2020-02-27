@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>UDP协议 | 自留地</title>
+  <meta name="keywords" content=" tcp/ip协议 ">
+  <meta name="description" content="UDP协议 | 自留地">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="标签">
+<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta property="og:site_name" content="自留地">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-12T06:32:30.997Z">
+<meta property="article:modified_time" content="2020-02-06T09:45:19.822Z">
+<meta property="article:author" content="fkrvro">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/school-book.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="自留地" type="application/atom+xml">
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>fkrvro</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(33)</small></div></li>
+    
+        
+            
+            <li><div data-rel="网络基础">网络基础<small>(12)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="服务搭建">服务搭建<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="工具手册">工具手册<small>(8)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="编程基础">编程基础<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="漏洞详解">漏洞详解<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="编程手册">编程手册<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="错误解决">错误解决<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="面经总结">面经总结<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="33">
+<input type="hidden" id="yelog_site_word_count" value="106.1k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="以 in: 开头进行全文搜索" />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color4">tcp/ip协议</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">http服务</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">系统引导</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">后渗透工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">php</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Python</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">文本处理</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">web漏洞</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">tcp/ip</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">C&C++</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">shell编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">文件处理</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">面经</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">注入工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">环境搭建</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class="网络基础 "
+           href="/2020/01/22/ARP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="ARP协议">ARP协议</span>
+            <span class="post-date" title="2020-01-22 23:32:12">2020/01/22</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/12/DHCP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="DHCP协议">DHCP协议</span>
+            <span class="post-date" title="2020-01-12 23:29:23">2020/01/12</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/11/FTP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="FTP协议">FTP协议</span>
+            <span class="post-date" title="2020-01-11 23:28:33">2020/01/11</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/07/DNS%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="DNS协议">DNS协议</span>
+            <span class="post-date" title="2020-01-07 12:25:02">2020/01/07</span>
+        </a>
+        
+        <a  class="服务搭建 "
+           href="/2020/02/26/LAMP%E5%AE%89%E8%A3%85/"
+           data-tag="http服务"
+           data-author="" >
+            <span class="post-title" title="LAMP安装">LAMP安装</span>
+            <span class="post-date" title="2020-02-26 13:57:56">2020/02/26</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/17/ICMP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="ICMP协议">ICMP协议</span>
+            <span class="post-date" title="2020-01-17 23:31:31">2020/01/17</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/15/IP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="IP协议">IP协议</span>
+            <span class="post-date" title="2020-01-15 13:31:09">2020/01/15</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/01/Masscan%E6%89%8B%E5%86%8C/"
+           data-tag="网络工具"
+           data-author="" >
+            <span class="post-title" title="Masscan手册">Masscan手册</span>
+            <span class="post-date" title="2020-02-01 13:24:43">2020/02/01</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/08/GRUB%E6%89%8B%E5%86%8C/"
+           data-tag="系统引导"
+           data-author="" >
+            <span class="post-title" title="GRUB手册">GRUB手册</span>
+            <span class="post-date" title="2020-02-08 23:40:46">2020/02/08</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/02/NC%E6%89%8B%E5%86%8C/"
+           data-tag="网络工具"
+           data-author="" >
+            <span class="post-title" title="NC手册">NC手册</span>
+            <span class="post-date" title="2020-02-02 10:24:46">2020/02/02</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/01/28/Metasploit%E6%89%8B%E5%86%8C/"
+           data-tag="后渗透工具"
+           data-author="" >
+            <span class="post-title" title="Metasploit手册">Metasploit手册</span>
+            <span class="post-date" title="2020-01-28 23:25:12">2020/01/28</span>
+        </a>
+        
+        <a  class="编程基础 "
+           href="/2020/02/17/PHP%E5%8F%98%E9%87%8F/"
+           data-tag="php"
+           data-author="" >
+            <span class="post-title" title="PHP变量">PHP变量</span>
+            <span class="post-date" title="2020-02-17 17:48:27">2020/02/17</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/13/SMTP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="SMTP协议">SMTP协议</span>
+            <span class="post-date" title="2020-01-13 23:29:57">2020/01/13</span>
+        </a>
+        
+        <a  class="编程基础 "
+           href="/2020/02/17/Python%E5%8F%98%E9%87%8F/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="Python变量">Python变量</span>
+            <span class="post-date" title="2020-02-17 18:39:56">2020/02/17</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/09/SSH%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="SSH协议">SSH协议</span>
+            <span class="post-date" title="2020-01-09 23:26:16">2020/01/09</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/06/VIM%E6%89%8B%E5%86%8C/"
+           data-tag="文本处理"
+           data-author="" >
+            <span class="post-title" title="VIM手册">VIM手册</span>
+            <span class="post-date" title="2020-02-06 00:21:49">2020/02/06</span>
+        </a>
+        
+        <a  class="漏洞详解 "
+           href="/2020/02/26/SSRF%E6%BC%8F%E6%B4%9E/"
+           data-tag="web漏洞"
+           data-author="" >
+            <span class="post-title" title="SSRF漏洞">SSRF漏洞</span>
+            <span class="post-date" title="2020-02-26 13:22:09">2020/02/26</span>
+        </a>
+        
+        <a  class="漏洞详解 "
+           href="/2020/02/27/XSS%E6%BC%8F%E6%B4%9E/"
+           data-tag="web漏洞"
+           data-author="" >
+            <span class="post-title" title="XSS漏洞">XSS漏洞</span>
+            <span class="post-date" title="2020-02-27 12:41:38">2020/02/27</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/19/TCP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="TCP协议">TCP协议</span>
+            <span class="post-date" title="2020-01-19 23:31:57">2020/01/19</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/21/UDP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="UDP协议">UDP协议</span>
+            <span class="post-date" title="2020-01-21 09:32:02">2020/01/21</span>
+        </a>
+        
+        <a  class="服务搭建 "
+           href="/2020/02/26/WAMP%E5%AE%89%E8%A3%85/"
+           data-tag="http服务"
+           data-author="" >
+            <span class="post-title" title="WAMP安装">WAMP安装</span>
+            <span class="post-date" title="2020-02-26 13:58:02">2020/02/26</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/05/http%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip"
+           data-author="" >
+            <span class="post-title" title="HTTP协议">HTTP协议</span>
+            <span class="post-date" title="2020-01-05 14:42:37">2020/01/05</span>
+        </a>
+        
+        <a  class="编程基础 "
+           href="/2020/02/20/c-c%E5%8F%98%E9%87%8F/"
+           data-tag="C&amp;C++"
+           data-author="" >
+            <span class="post-title" title="C&amp;C++变量">C&amp;C++变量</span>
+            <span class="post-date" title="2020-02-20 00:18:29">2020/02/20</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/01/25/nmap%E6%89%8B%E5%86%8C/"
+           data-tag="网络工具"
+           data-author="" >
+            <span class="post-title" title="Nmap手册">Nmap手册</span>
+            <span class="post-date" title="2020-01-25 23:24:29">2020/01/25</span>
+        </a>
+        
+        <a  class="编程手册 "
+           href="/2020/02/26/shell%E6%89%8B%E5%86%8C/"
+           data-tag="shell编程"
+           data-author="" >
+            <span class="post-title" title="shell手册">shell手册</span>
+            <span class="post-date" title="2020-02-26 00:06:36">2020/02/26</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/04/wireshark%E6%89%8B%E5%86%8C/"
+           data-tag="网络工具"
+           data-author="" >
+            <span class="post-title" title="wireshark手册">wireshark手册</span>
+            <span class="post-date" title="2020-02-04 16:40:50">2020/02/04</span>
+        </a>
+        
+        <a  class="错误解决 "
+           href="/2020/02/26/%E6%96%87%E4%BB%B6%E4%B9%B1%E7%A0%81/"
+           data-tag="文件处理"
+           data-author="" >
+            <span class="post-title" title="文件乱码">文件乱码</span>
+            <span class="post-date" title="2020-02-26 10:54:27">2020/02/26</span>
+        </a>
+        
+        <a  class="面经总结 "
+           href="/2020/02/26/%E7%AC%94%E8%AF%95%E9%9D%A2%E7%BB%8F/"
+           data-tag="面经"
+           data-author="" >
+            <span class="post-title" title="笔试面经">笔试面经</span>
+            <span class="post-date" title="2020-02-26 11:06:52">2020/02/26</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/25/sqlmap/"
+           data-tag="注入工具"
+           data-author="" >
+            <span class="post-title" title="sqlmap手册">sqlmap手册</span>
+            <span class="post-date" title="2020-02-25 23:24:36">2020/02/25</span>
+        </a>
+        
+        <a  class="服务搭建 "
+           href="/2020/01/03/%E4%B8%BB%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"
+           data-tag="环境搭建"
+           data-author="" >
+            <span class="post-title" title="主机系统安装配置">主机系统安装配置</span>
+            <span class="post-date" title="2020-01-03 14:04:01">2020/01/03</span>
+        </a>
+        
+        <a  class="面经总结 "
+           href="/2020/02/26/%E4%BA%BA%E4%BA%8B%E9%9D%A2%E7%BB%8F/"
+           data-tag="面经"
+           data-author="" >
+            <span class="post-title" title="人事面经">人事面经</span>
+            <span class="post-date" title="2020-02-26 12:17:19">2020/02/26</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/05/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/"
+           data-tag="tcp/ip"
+           data-author="" >
+            <span class="post-title" title="网络模型">网络模型</span>
+            <span class="post-date" title="2020-01-05 14:34:30">2020/01/05</span>
+        </a>
+        
+        <a  class="面经总结 "
+           href="/2020/02/26/%E6%8A%80%E6%9C%AF%E9%9D%A2%E7%BB%8F/"
+           data-tag="面经"
+           data-author="" >
+            <span class="post-title" title="面试面经">面试面经</span>
+            <span class="post-date" title="2020-02-26 11:07:03">2020/02/26</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-UDP协议" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">UDP协议</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="网络基础">网络基础</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color4">tcp/ip协议</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-02-25 22:49:30'>2020-01-21 09:32</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-概述"><span class="toc-text">1. 概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-UDP-的主要特点"><span class="toc-text">2. UDP 的主要特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-UDP-的首部格式"><span class="toc-text">3. UDP 的首部格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-UDP-校验和"><span class="toc-text">3. UDP 校验和</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-伪首部"><span class="toc-text">3.1 伪首部</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-UDP-校验和计算方法"><span class="toc-text">3.2 UDP 校验和计算方法</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-4 i,
+    .toc-level-4 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><p>用户数据报协议（UDP，User Datagram Protocol）为应用程序提供了一种无需建立连接就可以发送封装的 IP  数据报的方法。UDP是一种保留消息边界的简单的面向数据报的协议。UDP不提供差错纠正、队列管理、重复消除、流量控制和拥塞控制，但提供差错检测（包含我们在传输层中碰到的第一个真实的端到端（end-to-end）校验和）。这种协议自身提供最小功能，因此使用它的应用程序要做许多关于数据报如何发送和处理的控制工作。想要保证数据被可靠传递或正确排序，应用程序必须自己实现这些保护功能。一般来说，每个被应用程序请求的UDP输出操作只产生一个UDP数据报，从而发送一个IP数据报。而对于面向数据流的传输层协议（例如TCP），应用程序写入的全部数据与真正在单个IP数据报里传送的或接收方接收的内容可能没有联系。</p>
+<h2 id="2-UDP-的主要特点"><a href="#2-UDP-的主要特点" class="headerlink" title="2. UDP 的主要特点"></a>2. UDP 的主要特点</h2><p>1）. UDP 是<strong>无连接的</strong>，即发送数据之前不需要建立连接，因此减少了开销和发送数据之前的时延。<br> 2）. UDP 使用<strong>尽最大努力交付</strong>，即不保证可靠交付，因此主机不需要维持复杂的连接状态表。<br> 3）. UDP 是<strong>面向报文</strong>的。发送方的UDP对应用程序交下来的报文，在添加首部后就向下交付IP层。UDP对应用层交下来的报文，既不合并，也不拆分，而是<strong>保留这些报文的边界</strong>。因此，应用程序必须选择合适大小的报文。<br> 4）. UDP <strong>没有拥塞控制</strong>，因此网络出现的拥塞不会使源主机的发送速率降低。很多的实时应用（如IP电话、实时视频会议等）要去源主机以恒定的速率发送数据，并且允许在网络发生拥塞时丢失一些数据，但却不允许数据有太多的时延。UDP正好符合这种要求。<br> 5）. UDP <strong>支持一对一、一对多、多对一和多对多的交互通信</strong>。<br> 6）. UDP 的<strong>首部开销小</strong>，只有8个字节，比TCP的20个字节的首部要短。</p>
+<p>虽然某些实时应用需要使用没有拥塞控制的UDP,但当很多的源主机同时都向网络发送高速率的实时视频流时,网络就有可能发生拥塞,结果大家都无法正常接收。因此,不使用拥塞控制功能的UDP有可能会引起网络产生严重的拥塞问题。<br> 还有一些使用UDP的实时应用,需要对UDP的不可靠的传输进行适当的改进,以减少数据的丢失。在这种情况下,应用进程本身可以在不影响应用的实时性的前提下,增加些提高可靠性的措施,如采用<strong>前向纠错</strong>或<strong>重传已丢失的报文</strong>。</p>
+<h2 id="3-UDP-的首部格式"><a href="#3-UDP-的首部格式" class="headerlink" title="3. UDP 的首部格式"></a>3. UDP 的首部格式</h2><p><img src="/picture/12/1.png" alt="img"></p>
+<p>UDP有两个字段：数据字段和首部字段。首部字段很简单，只有8个字节，由4个字段组成，每个字段的长度都是两个字节。各字段意义如下：</p>
+<ol>
+<li><strong>源端口</strong>：源端口号。在需要对方回信时选用。不需要时可用全0。</li>
+<li><strong>目的端口</strong>：目的端口号。这在终点交付报文时必须要使用到。</li>
+<li><strong>长度</strong>：  UDP用户数据报的长度，其最小值是8（仅有首部），发送一个带0字节数据的UDP数据报是允许的。值得注意的是，UDP长度字段是冗余的；IPV4头部包含了数据报的总长度，同时IPV6头部包含了负载长度。因此，一个UDP/IPV4数据报的长度等于IPV4数据报的总长度减去IPV4头部的长度。一个UDP/IPV6数据报的长度等于包含在IPV6头部中的<em>负载长度</em>（payload length）字段的值减去所有扩展头部（除非使用了超长数据报）的长度。这两种情况下，UDP长度字段应该与从IP层提供的信息计算得到的长度是一致的。</li>
+<li><strong>校验和</strong>：检测UDP用户数据报在传输中是否有错。有错就丢弃。</li>
+</ol>
+<p><img src="/picture/12/5.png" alt="img"></p>
+<p>当运输层从 IP 层收到 UDP 数据报时，根据目的端口，通过相应的端口上交给应用进程。<br><img src="/picture/12/2.png" alt="img"></p>
+<p>如果接收方 UDP发现报文中的目的端口号不正确（即不存在对应于该端口号的应用进程），就丢弃该报文，并由网际控制报文协议 ICMP 发送“端口不可达”差错报文给发送方。<br> 请注意，虽然在 UDP 之间的通信要用到其端口号，但由于 UDP 的通信是无连接的，因此不需要使用套接字（TCP 之间的通信必须要在两个套接字之间建立连接）。</p>
+<h2 id="3-UDP-校验和"><a href="#3-UDP-校验和" class="headerlink" title="3. UDP 校验和"></a>3. UDP 校验和</h2><p>UDP 校验和是一个端到端的传输层校验和，是对包含了IP头部中的源（Source）和目的IP地址（Destination  Address）字段的 UDP  伪首部计算得到的。它由初始的发送方计算得到，由最终的目的方校验。它在传输中不会被修改（除非它通过一个NAT）。IPV4  头部中的校验和只覆盖整个头部（即它不覆盖IP分组中的任何数据），它在每个IP跳都要被重新计算（因为IPV4  TTL字段的值在数据报转发时会被路由器减少）。传输协议（如 TCP、UDP）使用校验和来覆盖它们的头部和数据。对于 UDP  来说，校验和是可选的，而其他的则是强制的。当 UDP  在IPV6中使用时，校验和的计算与使用是强制的，因为在IP层没有头部校验和。为了给应用程序提供无差错数据，像UDP这样的传输层协议，在投递数据到接收方应用程序之前，必须计算校验和或者使用其他差错监测机制。</p>
+<h3 id="3-1-伪首部"><a href="#3-1-伪首部" class="headerlink" title="3.1 伪首部"></a>3.1 伪首部</h3><p>在UDP伪首部中，包含32位源IP地址，32位目的IP地址，8位填充0，8位协议，16位UDP长度。伪首部并非TCP&amp;UDP数据报中实际的有效成分。伪首部是一个虚拟的数据结构，<strong>其中的信息是从数据报所在IP分组头的分组头中提取的</strong>，既不向下传送也不向上递交，而仅仅是为计算校验和。<br> 伪头部的目的是让UDP层验证数据是否已经到达正确的目的地（即，该IP没有接受地址错误的数据报，也没有给UDP一个本该其他传输协议的数据报），计算UDP校验和时覆盖的字段，包含了伪头部以及UDP头部和负载。</p>
+<h3 id="3-2-UDP-校验和计算方法"><a href="#3-2-UDP-校验和计算方法" class="headerlink" title="3.2 UDP 校验和计算方法"></a>3.2 UDP 校验和计算方法</h3><p>UDP计算校验和的方法和计算IP数据报首部校验和的方法相似。但不同的是：IP数据报的校验和只检验IP数据报的首部，但UDP的校验和是<strong>将首部和数据部分一起都检验</strong>。<br> 在发送方，首先是将全零放入检验和字段。再将伪首部以及UDP用户数据报看是由许多16位的字串接起来。若UDP用户数据报的数据部分不是偶数个字节，则要填入一个全零字节(最后一个奇数字节应是16位数的高字节而低字节填0，<strong>此字节不发送</strong>)。 然后按二进制反码计算出这些16位字的和。 将此和的二进制反码写入校验和字段后，发送此UDP用户数据报。<br> 在接收方，把收到的UDP用户数据报连同伪首部(以及可能的填充全零字节)一起，按二进制反码求这些16位字的和。<strong>当无差错时其结果应全为1</strong>。否则就表明有差错出现，接收方就丢弃此UDP用户数据报(也可以上交给应用层，但附上出现了差错的警告)。如果校验和字段值为0x0000表示发送方没有计算校验和。<br><img src="/picture/12/3.png" alt="img"></p>
+<p>如上图所示，伪首部的第3字段是全零；第4字段是IP首部中的协议字段的值。对于UDP，此协议字段值为17；第5字段是UDP用户数据报的长度。因此，这样的检验和，既检查了UDP用户数据报的源端口和目的端口以及UDP用户数据报的数据部分，又检查了IP数据报的源IP地址和目的地址。注意，UDP数据报的长度在校验和的计算中出现了两次。</p>
+<p>计算原理是二进制反码求和运算，具体来说就是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0 + 0 &#x3D; 0</span><br><span class="line">1 + 0 &#x3D; 0 + 1 &#x3D; 1</span><br><span class="line">1 + 1 &#x3D; 10</span><br></pre></td></tr></table></figure>
+
+<p>如果最高位有进位，就把进位的1取下来与最低位再做一次二进制加法<br> 示例：<br><img src="/picture/12/4.png" alt="img"></p>
+<p>图3-2-1 中二进制反码求和的参考代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int MAX_NUM &#x3D; 65536; &#x2F;&#x2F; 2^16 &#x3D; 1 0000 0000 0000 0000</span><br><span class="line">int a[15] &#x3D; &#123;153*256+19,8*256+104,171*256+3,14*256+11,17,15,1087,13,15,21573,21332,18766,18176&#125;;</span><br><span class="line">&#x2F;&#x2F; 256 &#x3D; 2^8 &#x3D; 1 0000 0000</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int sum &#x3D; 0;</span><br><span class="line">    for(int i&#x3D;0;i&lt;13;i++)&#123;</span><br><span class="line">        sum +&#x3D; a[i];</span><br><span class="line">        if(sum &gt; MAX_NUM)&#123;</span><br><span class="line">            sum &#x3D; sum % MAX_NUM + 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d\n&quot;,sum);</span><br><span class="line">    </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：UDP协议（传输层）直接操作IP（网络层）的比特，会导致所谓的“违反分层”（layering  violation）规则。但这只对协议实现产生微小的影响，因为一般来说，当数据传递到（或来自于）UDP时，IP层的信息已经是现成的了。相比之下，更应该关注NAT，特别是当UDP数据报被分片时。</p>
+</blockquote>
+<p>尽管UDP数据报校验和在原始UDP规范中是可选的，目前它们还是被要求在主机中默认使用[RFC1122]。在20世纪80年代,一些计算机供应商默认关闭了UDP校验和功能以加速其Sun网络文件系统(NFS)的实现，该网络文件系统使用了UDP。因为有第2层的CRC保护(这要比互联网校验和更强壮)，在许多情况下这可能不会产生问题，然而默认关闭校验和功能被认为是一种不好的方法(也是违反RFC规范的)。早期的互联网经验表明,当数据报通过路由器时，总会存在有软件和硬件漏洞的路由器在转发数据报时会修改其中的比特。如果端到端的UDP校验和被关闭的话，这些UDP数据报中的错误就无法检测到。同时注意到一些更老的数据链路协议(比如，串行线IP或SLIP)没有任何形式的数据链路校验和，因此存在IP分组被修改而检测不到的可能性，除非引入另一种校验和。<br> 考虑到伪头部这样的结构，可以很清楚地看到，当一个UDP/IPv4数据报穿过一个NAT时，不仅IP层头部的校验和要被修改，而且UDP伪头部的校验和也必须被正确地修改，因为IP层的地址和/或UDP层的端日号可能会改变。因此NAT通常因同时修玫分组中协议的多层而违反分层规则。当然，考虑到伪头部本身就是违反分层规则的， NAT没有选择。UDP流量被NAT处理时的一些特定规则由[RFC4784]给出。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 fkrvro@163.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Yelog</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#tcp/ip协议','#http服务','#网络工具','#系统引导','#后渗透工具','#php','#Python','#文本处理','#web漏洞','#tcp/ip','#C&amp;C++','#shell编程','#文件处理','#面经','#注入工具','#环境搭建',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

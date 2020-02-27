@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>sqlmap手册 | 自留地</title>
+  <meta name="keywords" content=" 注入工具 ">
+  <meta name="description" content="sqlmap手册 | 自留地">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="标签">
+<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta property="og:site_name" content="自留地">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-12T06:32:30.997Z">
+<meta property="article:modified_time" content="2020-02-06T09:45:19.822Z">
+<meta property="article:author" content="fkrvro">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/school-book.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="自留地" type="application/atom+xml">
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>fkrvro</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(33)</small></div></li>
+    
+        
+            
+            <li><div data-rel="网络基础">网络基础<small>(12)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="服务搭建">服务搭建<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="工具手册">工具手册<small>(8)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="编程基础">编程基础<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="漏洞详解">漏洞详解<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="编程手册">编程手册<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="错误解决">错误解决<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="面经总结">面经总结<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="33">
+<input type="hidden" id="yelog_site_word_count" value="106.1k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="以 in: 开头进行全文搜索" />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color4">tcp/ip协议</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">http服务</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">系统引导</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">后渗透工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">php</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Python</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">文本处理</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">web漏洞</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">tcp/ip</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">C&C++</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">shell编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">文件处理</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">面经</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">注入工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">环境搭建</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class="网络基础 "
+           href="/2020/01/22/ARP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="ARP协议">ARP协议</span>
+            <span class="post-date" title="2020-01-22 23:32:12">2020/01/22</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/12/DHCP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="DHCP协议">DHCP协议</span>
+            <span class="post-date" title="2020-01-12 23:29:23">2020/01/12</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/11/FTP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="FTP协议">FTP协议</span>
+            <span class="post-date" title="2020-01-11 23:28:33">2020/01/11</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/07/DNS%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="DNS协议">DNS协议</span>
+            <span class="post-date" title="2020-01-07 12:25:02">2020/01/07</span>
+        </a>
+        
+        <a  class="服务搭建 "
+           href="/2020/02/26/LAMP%E5%AE%89%E8%A3%85/"
+           data-tag="http服务"
+           data-author="" >
+            <span class="post-title" title="LAMP安装">LAMP安装</span>
+            <span class="post-date" title="2020-02-26 13:57:56">2020/02/26</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/17/ICMP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="ICMP协议">ICMP协议</span>
+            <span class="post-date" title="2020-01-17 23:31:31">2020/01/17</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/15/IP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="IP协议">IP协议</span>
+            <span class="post-date" title="2020-01-15 13:31:09">2020/01/15</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/01/Masscan%E6%89%8B%E5%86%8C/"
+           data-tag="网络工具"
+           data-author="" >
+            <span class="post-title" title="Masscan手册">Masscan手册</span>
+            <span class="post-date" title="2020-02-01 13:24:43">2020/02/01</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/08/GRUB%E6%89%8B%E5%86%8C/"
+           data-tag="系统引导"
+           data-author="" >
+            <span class="post-title" title="GRUB手册">GRUB手册</span>
+            <span class="post-date" title="2020-02-08 23:40:46">2020/02/08</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/02/NC%E6%89%8B%E5%86%8C/"
+           data-tag="网络工具"
+           data-author="" >
+            <span class="post-title" title="NC手册">NC手册</span>
+            <span class="post-date" title="2020-02-02 10:24:46">2020/02/02</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/01/28/Metasploit%E6%89%8B%E5%86%8C/"
+           data-tag="后渗透工具"
+           data-author="" >
+            <span class="post-title" title="Metasploit手册">Metasploit手册</span>
+            <span class="post-date" title="2020-01-28 23:25:12">2020/01/28</span>
+        </a>
+        
+        <a  class="编程基础 "
+           href="/2020/02/17/PHP%E5%8F%98%E9%87%8F/"
+           data-tag="php"
+           data-author="" >
+            <span class="post-title" title="PHP变量">PHP变量</span>
+            <span class="post-date" title="2020-02-17 17:48:27">2020/02/17</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/13/SMTP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="SMTP协议">SMTP协议</span>
+            <span class="post-date" title="2020-01-13 23:29:57">2020/01/13</span>
+        </a>
+        
+        <a  class="编程基础 "
+           href="/2020/02/17/Python%E5%8F%98%E9%87%8F/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="Python变量">Python变量</span>
+            <span class="post-date" title="2020-02-17 18:39:56">2020/02/17</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/09/SSH%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="SSH协议">SSH协议</span>
+            <span class="post-date" title="2020-01-09 23:26:16">2020/01/09</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/06/VIM%E6%89%8B%E5%86%8C/"
+           data-tag="文本处理"
+           data-author="" >
+            <span class="post-title" title="VIM手册">VIM手册</span>
+            <span class="post-date" title="2020-02-06 00:21:49">2020/02/06</span>
+        </a>
+        
+        <a  class="漏洞详解 "
+           href="/2020/02/26/SSRF%E6%BC%8F%E6%B4%9E/"
+           data-tag="web漏洞"
+           data-author="" >
+            <span class="post-title" title="SSRF漏洞">SSRF漏洞</span>
+            <span class="post-date" title="2020-02-26 13:22:09">2020/02/26</span>
+        </a>
+        
+        <a  class="漏洞详解 "
+           href="/2020/02/27/XSS%E6%BC%8F%E6%B4%9E/"
+           data-tag="web漏洞"
+           data-author="" >
+            <span class="post-title" title="XSS漏洞">XSS漏洞</span>
+            <span class="post-date" title="2020-02-27 12:41:38">2020/02/27</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/19/TCP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="TCP协议">TCP协议</span>
+            <span class="post-date" title="2020-01-19 23:31:57">2020/01/19</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/21/UDP%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip协议"
+           data-author="" >
+            <span class="post-title" title="UDP协议">UDP协议</span>
+            <span class="post-date" title="2020-01-21 09:32:02">2020/01/21</span>
+        </a>
+        
+        <a  class="服务搭建 "
+           href="/2020/02/26/WAMP%E5%AE%89%E8%A3%85/"
+           data-tag="http服务"
+           data-author="" >
+            <span class="post-title" title="WAMP安装">WAMP安装</span>
+            <span class="post-date" title="2020-02-26 13:58:02">2020/02/26</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/05/http%E5%8D%8F%E8%AE%AE/"
+           data-tag="tcp/ip"
+           data-author="" >
+            <span class="post-title" title="HTTP协议">HTTP协议</span>
+            <span class="post-date" title="2020-01-05 14:42:37">2020/01/05</span>
+        </a>
+        
+        <a  class="编程基础 "
+           href="/2020/02/20/c-c%E5%8F%98%E9%87%8F/"
+           data-tag="C&amp;C++"
+           data-author="" >
+            <span class="post-title" title="C&amp;C++变量">C&amp;C++变量</span>
+            <span class="post-date" title="2020-02-20 00:18:29">2020/02/20</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/01/25/nmap%E6%89%8B%E5%86%8C/"
+           data-tag="网络工具"
+           data-author="" >
+            <span class="post-title" title="Nmap手册">Nmap手册</span>
+            <span class="post-date" title="2020-01-25 23:24:29">2020/01/25</span>
+        </a>
+        
+        <a  class="编程手册 "
+           href="/2020/02/26/shell%E6%89%8B%E5%86%8C/"
+           data-tag="shell编程"
+           data-author="" >
+            <span class="post-title" title="shell手册">shell手册</span>
+            <span class="post-date" title="2020-02-26 00:06:36">2020/02/26</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/04/wireshark%E6%89%8B%E5%86%8C/"
+           data-tag="网络工具"
+           data-author="" >
+            <span class="post-title" title="wireshark手册">wireshark手册</span>
+            <span class="post-date" title="2020-02-04 16:40:50">2020/02/04</span>
+        </a>
+        
+        <a  class="错误解决 "
+           href="/2020/02/26/%E6%96%87%E4%BB%B6%E4%B9%B1%E7%A0%81/"
+           data-tag="文件处理"
+           data-author="" >
+            <span class="post-title" title="文件乱码">文件乱码</span>
+            <span class="post-date" title="2020-02-26 10:54:27">2020/02/26</span>
+        </a>
+        
+        <a  class="面经总结 "
+           href="/2020/02/26/%E7%AC%94%E8%AF%95%E9%9D%A2%E7%BB%8F/"
+           data-tag="面经"
+           data-author="" >
+            <span class="post-title" title="笔试面经">笔试面经</span>
+            <span class="post-date" title="2020-02-26 11:06:52">2020/02/26</span>
+        </a>
+        
+        <a  class="工具手册 "
+           href="/2020/02/25/sqlmap/"
+           data-tag="注入工具"
+           data-author="" >
+            <span class="post-title" title="sqlmap手册">sqlmap手册</span>
+            <span class="post-date" title="2020-02-25 23:24:36">2020/02/25</span>
+        </a>
+        
+        <a  class="服务搭建 "
+           href="/2020/01/03/%E4%B8%BB%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"
+           data-tag="环境搭建"
+           data-author="" >
+            <span class="post-title" title="主机系统安装配置">主机系统安装配置</span>
+            <span class="post-date" title="2020-01-03 14:04:01">2020/01/03</span>
+        </a>
+        
+        <a  class="面经总结 "
+           href="/2020/02/26/%E4%BA%BA%E4%BA%8B%E9%9D%A2%E7%BB%8F/"
+           data-tag="面经"
+           data-author="" >
+            <span class="post-title" title="人事面经">人事面经</span>
+            <span class="post-date" title="2020-02-26 12:17:19">2020/02/26</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/2020/01/05/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/"
+           data-tag="tcp/ip"
+           data-author="" >
+            <span class="post-title" title="网络模型">网络模型</span>
+            <span class="post-date" title="2020-01-05 14:34:30">2020/01/05</span>
+        </a>
+        
+        <a  class="面经总结 "
+           href="/2020/02/26/%E6%8A%80%E6%9C%AF%E9%9D%A2%E7%BB%8F/"
+           data-tag="面经"
+           data-author="" >
+            <span class="post-title" title="面试面经">面试面经</span>
+            <span class="post-date" title="2020-02-26 11:07:03">2020/02/26</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-sqlmap" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">sqlmap手册</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="工具手册">工具手册</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color5">注入工具</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-02-25 23:07:33'>2020-02-25 23:24</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:4.2k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#sqlmap五种注入模式："><span class="toc-text">sqlmap五种注入模式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数"><span class="toc-text">参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#选项"><span class="toc-text">选项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#目标"><span class="toc-text">目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#请求"><span class="toc-text">请求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优化"><span class="toc-text">优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注入"><span class="toc-text">注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#检测"><span class="toc-text">检测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#技巧"><span class="toc-text">技巧</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指纹"><span class="toc-text">指纹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#枚举"><span class="toc-text">枚举</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#暴力"><span class="toc-text">暴力</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用户自定义函数注入"><span class="toc-text">用户自定义函数注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#访问文件系统"><span class="toc-text">访问文件系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#操作系统访问"><span class="toc-text">操作系统访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Windows注册表访问"><span class="toc-text">Windows注册表访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一般选项"><span class="toc-text">一般选项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tamper"><span class="toc-text">tamper</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-4 i,
+    .toc-level-4 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="sqlmap五种注入模式："><a href="#sqlmap五种注入模式：" class="headerlink" title="sqlmap五种注入模式："></a>sqlmap五种注入模式：</h3><ol>
+<li>基于布尔的盲注，即可以根据返回页面判断条件真假的注入；</li>
+<li>基于时间的盲注，即不能根据页面返回内容判断任何信息，用条件语句查看时间延迟语句是否执行（即页面返回时间是否增加）来判断；</li>
+<li>基于报错注入，即页面会返回错误信息，或者把注入的语句的结果直接返回在页面中；</li>
+<li>联合查询注入，可以使用union的情况下的注入；</li>
+<li>堆查询注入，可以同时执行多条语句的执行时的注入</li>
+</ol>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><h4 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h4><ol>
+<li>-h,–help  显示基本帮助信息并退出</li>
+<li>-hh    显示高级帮助信息并退出</li>
+<li>–version  显示程序版本信息并退出</li>
+<li>-v VERBOSE信息级别: 0-6  （缺省1），其值具体含义：“0”只显示python错误以及严重的信息；1同时显示基本信息和警告信息（默认）；“2”同时显示debug信息；“3”同时显示注入的payload；“4”同时显示HTTP请求；“5”同时显示HTTP响应头；“6”同时显示HTTP响应页面；如果想看到sqlmap发送的测试payload最好的等级就是3。</li>
+</ol>
+<h4 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h4><ul>
+<li>在这些选项中必须提供至少有一个确定目标</li>
+</ul>
+<ol>
+<li>-d DIRECT    直接连接数据库的连接字符串</li>
+<li>-u URL, –url=URL   目标URL (e.g.”<a href="http://www.site.com/vuln.php?id=1“)，使用-u或者–url" target="_blank" rel="noopener">http://www.site.com/vuln.php?id=1“)，使用-u或者–url</a></li>
+<li>-l LOGFILE     从Burp或者WebScarab代理日志文件中分析目标</li>
+<li>-x SITEMAPURL  从远程网站地图（sitemap.xml）文件来解析目标</li>
+<li>-m BULKFILE      将目标地址保存在文件中，一行为一个URL地址进行批量检测。</li>
+<li>-r REQUESTFILE    从文件加载HTTP请求，sqlmap可以从一个文本文件中获取HTTP请求，这样就可以跳过设置一些其他参数（比如cookie，POST数据，等等），请求是HTTPS的时需要配合这个–force-ssl参数来使用，或者可以在Host头后门加上:443</li>
+<li>-g GOOGLEDORK     从谷歌中加载结果目标URL（只获取前100个结果，需要挂代理）</li>
+<li>-c CONFIGFILE       从配置ini文件中加载选项</li>
+</ol>
+<h4 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h4><ul>
+<li>这些选项可以用来指定如何连接到目标URL</li>
+</ul>
+<ol>
+<li>-–method=METHOD  强制使用给定的HTTP方法（例如put）</li>
+<li>–data=DATA   <strong>通过POST发送数据</strong>参数，sqlmap会像检测GET参数一样检测POST的参数。–data=”id=1” -f –banner –dbs –users</li>
+<li>-–param-del=PARA..  当GET或POST的数据需要用其他字符分割测试参数的时候需要用到此参数。</li>
+<li>–cookie=COOKIE     <strong>HTTP Cookieheader 值</strong></li>
+<li>–cookie-del=COO..  用来分隔cookie的字符串值</li>
+<li>–load-cookies=L..  Filecontaining cookies in Netscape/wget format  包含Netscape / wget格式的cookie的文件</li>
+<li>–drop-set-cookie   IgnoreSet-Cookie header from response    从响应中忽略Set-Cookie头</li>
+<li>–user-agent=AGENT  默认情况下sqlmap的HTTP请求头中User-Agent值是：sqlmap/1.0-dev-xxxxxxx(<a href="http://sqlmap.org)可以使用–user-agent参数来修改，同时也可以使用–random-agent参数来随机的从./txt/user-agents.txt中获取。当–level参数设定为3或者3以上的时候，会尝试对User-Angent进行注入" target="_blank" rel="noopener">http://sqlmap.org)可以使用–user-agent参数来修改，同时也可以使用–random-agent参数来随机的从./txt/user-agents.txt中获取。当–level参数设定为3或者3以上的时候，会尝试对User-Angent进行注入</a></li>
+<li>–random-agent     使用random-agent作为HTTP User-Agent头值</li>
+<li>–host=HOST         HTTP Hostheader value    HTTP主机头值</li>
+<li>–referer=REFERER   sqlmap可以在请求中伪造HTTP中的referer，当–level参数设定为3或者3以上的时候会尝试对referer注入</li>
+<li>-H HEADER, –hea..  额外的http header头(e.g.”X-Forwarded-For: 127.0.0.1″)</li>
+<li>–headers=HEADERS  可以通过–headers参数来增加额外的http头(e.g.”Accept-Language: fr\nETag: 123″)</li>
+<li>–auth-type=AUTH.. HTTP的认证类型 (Basic, Digest, NTLM or PKI)</li>
+<li>–auth-cred=AUTH..  HTTP 认证凭证(name:password)</li>
+<li>–auth-file=AUTH..  HTTP  认证PEM证书/私钥文件；当Web服务器需要客户端证书进行身份验证时，需要提供两个文件:key_file，cert_file,key_file是格式为PEM文件，包含着你的私钥，cert_file是格式为PEM的连接文件。</li>
+<li>–ignore-401        Ignore HTTPError 401 (Unauthorized)忽略HTTP 401错误（未授权的）</li>
+<li>–ignore-proxy      忽略系统的默认代理设置</li>
+<li>–ignore-redirects    忽略重定向的尝试</li>
+<li>–ignore-timeouts   忽略连接超时</li>
+<li>–proxy=PROXY       使用代理服务器连接到目标URL</li>
+<li>–proxy-cred=PRO..  代理认证凭证(name:password)</li>
+<li>–proxy-file=PRO..  从文件加载代理列表</li>
+<li>–tor               使用Tor匿名网络</li>
+<li>–tor-port=TORPORT  设置Tor代理端口</li>
+<li>-–tor-type=TORTYPE  设置Tor代理类型 (HTTP,SOCKS4 or SOCKS5 (缺省))</li>
+<li>–check-tor       检查Tor的是否正确使用</li>
+<li>–delay=DELAY   可以设定两个HTTP(S)请求间的延迟，设定为0.5的时候是半秒，默认是没有延迟的。</li>
+<li>–timeout=TIMEOUT   可以设定一个HTTP(S)请求超过多久判定为超时，10表示10秒，默认是30秒。</li>
+<li>–retries=RETRIES   当HTTP(S)超时时，可以设定重新尝试连接次数，默认是3次。</li>
+<li>–randomize=RPARAM可以设定某一个参数值在每一次请求中随机的变化，长度和类型会与提供的初始值一样</li>
+<li>–safe-url=SAFEURL  提供一个安全不错误的连接，每隔一段时间都会去访问一下</li>
+<li>–safe-post=SAFE..  提供一个安全不错误的连接，每次测试请求之后都会再访问一遍安全连接。</li>
+<li>–safe-req=SAFER..  从文件中加载安全HTTP请求</li>
+<li>–safe-freq=SAFE..  测试一个给定安全网址的两个访问请求</li>
+<li>–skip-urlencode    跳过URL的有效载荷数据编码</li>
+<li>–csrf-token=CSR..  Parameter usedto hold anti-CSRF token参数用来保存反CSRF令牌</li>
+<li>–csrf-url=CSRFURL  URL地址访问提取anti-CSRF令牌</li>
+<li>–force-ssl         强制使用SSL/HTTPS</li>
+<li>–hpp               使用HTTP参数污染的方法</li>
+<li>–eval=EVALCODE      在有些时候，需要根据某个参数的变化，而修改另个一参数，才能形成正常的请求，这时可以用–eval参数在每次请求时根据所写python代码做完修改后请求。(e.g “import hashlib;id2=hashlib.md5(id).hexdigest()”)</li>
+</ol>
+<ul>
+<li>sqlmap.py -u”<a href="http://www.target.com/vuln.php?id=1&amp;hash=c4ca4238a0b923820dcc509a6f75849b“–eval=”import" target="_blank" rel="noopener">http://www.target.com/vuln.php?id=1&amp;hash=c4ca4238a0b923820dcc509a6f75849b“–eval=”import</a> hashlib;hash=hashlib.md5(id).hexdigest()”</li>
+</ul>
+<h4 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h4><ul>
+<li>这些选项可用于优化sqlmap性能</li>
+</ul>
+<ol>
+<li>-o               打开所有的优化开关</li>
+<li>–predict-output    预测普通查询输出</li>
+<li>–keep-alive        使用持久HTTP（S）连接</li>
+<li>–null-connection   从没有实际的HTTP响应体中检索页面长度</li>
+<li>–threads=THREADS   当前http(s)最大请求数 (默认 1)</li>
+</ol>
+<h4 id="注入"><a href="#注入" class="headerlink" title="注入"></a>注入</h4><ul>
+<li>这些选项可用于指定要测试的参数、提供自定义注入有效载荷和可选的篡改脚本。</li>
+</ul>
+<ol>
+<li>-p TESTPARAMETER    可测试的参数</li>
+<li>–skip=SKIP         跳过对给定参数的测试</li>
+<li>–skip-static       跳过测试不显示为动态的参数</li>
+<li>–param-exclude=..  使用正则表达式排除参数进行测试（e.g. “ses”）</li>
+<li>–dbms=DBMS         强制后端的DBMS为此值</li>
+<li>–dbms-cred=DBMS..  DBMS认证凭证(user:password)</li>
+<li>–os=OS            强制后端的DBMS操作系统为这个值</li>
+<li>–invalid-bignum    使用大数字使值无效</li>
+<li>–invalid-logical   使用逻辑操作使值无效</li>
+<li>–invalid-string    使用随机字符串使值无效</li>
+<li>–no-cast          关闭有效载荷铸造机制</li>
+<li>–no-escape         关闭字符串逃逸机制</li>
+<li>–prefix=PREFIX     注入payload字符串前缀</li>
+<li>–suffix=SUFFIX     注入payload字符串后缀</li>
+<li>–tamper=TAMPER   使用给定的脚本篡改注入数据</li>
+</ol>
+<h4 id="检测"><a href="#检测" class="headerlink" title="检测"></a>检测</h4><ul>
+<li>这些选项可以用来指定在SQL盲注时如何解析和比较HTTP响应页面的内容</li>
+</ul>
+<ol>
+<li>–level=LEVEL     执行测试的等级（1-5，默认为1）</li>
+<li>–risk=RISK       执行测试的风险（0-3，默认为1）</li>
+<li>–string=STRING    查询时有效时在页面匹配字符串</li>
+<li>–not-string=NOT..  当查询求值为无效时匹配的字符串</li>
+<li>–regexp=REGEXP     查询时有效时在页面匹配正则表达式</li>
+<li>–code=CODE       当查询求值为True时匹配的HTTP代码</li>
+<li>–text-only        仅基于在文本内容比较网页</li>
+<li>–titles           仅根据他们的标题进行比较</li>
+</ol>
+<h4 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h4><ul>
+<li>这些选项可用于调整具体的SQL注入测试</li>
+</ul>
+<ol>
+<li>–technique=TECH    SQL注入技术测试（默认BEUST）</li>
+<li>–time-sec=TIMESEC  DBMS响应的延迟时间（默认为5秒）</li>
+<li>–union-cols=UCOLS  定列范围用于测试UNION查询注入</li>
+<li>–union-char=UCHAR  暴力猜测列的字符数</li>
+<li>–union-from=UFROM  SQL注入UNION查询使用的格式</li>
+<li>–dns-domain=DNS..  DNS泄露攻击使用的域名</li>
+<li>–second-order=S..  URL搜索产生的结果页面</li>
+</ol>
+<h4 id="指纹"><a href="#指纹" class="headerlink" title="指纹"></a>指纹</h4><ol>
+<li>-f, –fingerprint   执行广泛的DBMS版本指纹检查</li>
+</ol>
+<h4 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h4><ul>
+<li>这些选项可以用来列举后端数据库管理系统的信息、表中的结构和数据。此外，您还可以运行自定义的SQL语句。</li>
+</ul>
+<ol>
+<li>-a, –all           获取所有信息</li>
+<li>-b, –banner        获取数据库管理系统的标识</li>
+<li>–current-user      获取数据库管理系统当前用户</li>
+<li>–current-db        获取数据库管理系统当前数据库</li>
+<li>–hostname         获取数据库服务器的主机名称</li>
+<li>–is-dba            检测DBMS当前用户是否DBA</li>
+<li>–users             枚举数据库管理系统用户</li>
+<li>–passwords         枚举数据库管理系统用户密码哈希</li>
+<li>–privileges        枚举数据库管理系统用户的权限</li>
+<li>–roles            枚举数据库管理系统用户的角色</li>
+<li>–dbs             枚举数据库管理系统数据库</li>
+<li>–tables            枚举的DBMS数据库中的表</li>
+<li>–columns          枚举DBMS数据库表列</li>
+<li>–schema            枚举数据库架构</li>
+<li>–count             检索表的项目数，有时候用户只想获取表中的数据个数而不是具体的内容，那么就可以使用这个参数：sqlmap.py -u url –count -D testdb</li>
+<li>–dump            转储数据库表项</li>
+<li>–dump-all          转储数据库所有表项</li>
+<li>–search           搜索列（S），表（S）和/或数据库名称（S）</li>
+<li>–comments          获取DBMS注释</li>
+<li>-D DB               要进行枚举的指定数据库名</li>
+<li>-T TBL              DBMS数据库表枚举</li>
+<li>-C COL             DBMS数据库表列枚举</li>
+<li>-X EXCLUDECOL     DBMS数据库表不进行枚举</li>
+<li>-U USER           用来进行枚举的数据库用户</li>
+<li>–exclude-sysdbs    枚举表时排除系统数据库</li>
+<li>–pivot-column=P..  Pivot columnname</li>
+<li>–where=DUMPWHERE   Use WHEREcondition while table dumping</li>
+<li>–start=LIMITSTART  获取第一个查询输出数据位置</li>
+<li>–stop=LIMITSTOP   获取最后查询的输出数据</li>
+<li>–first=FIRSTCHAR   第一个查询输出字的字符获取</li>
+<li>–last=LASTCHAR    最后查询的输出字字符获取</li>
+<li>–sql-query=QUERY   要执行的SQL语句</li>
+<li>–sql-shell         提示交互式SQL的shell</li>
+<li>–sql-file=SQLFILE  要执行的SQL文件</li>
+</ol>
+<h4 id="暴力"><a href="#暴力" class="headerlink" title="暴力"></a>暴力</h4><p>这些选项可以被用来运行暴力检查</p>
+<ol>
+<li>–common-tables     检查存在共同表</li>
+<li>–common-columns    检查存在共同列</li>
+</ol>
+<h4 id="用户自定义函数注入"><a href="#用户自定义函数注入" class="headerlink" title="用户自定义函数注入"></a>用户自定义函数注入</h4><ul>
+<li>这些选项可以用来创建用户自定义函数</li>
+</ul>
+<ol>
+<li>–udf-inject    注入用户自定义函数</li>
+<li>–shared-lib=SHLIB  共享库的本地路径</li>
+</ol>
+<h4 id="访问文件系统"><a href="#访问文件系统" class="headerlink" title="访问文件系统"></a>访问文件系统</h4><ul>
+<li>这些选项可以被用来访问后端数据库管理系统的底层文件系统</li>
+</ul>
+<ol>
+<li>–file-read=RFILE   从后端的数据库管理系统文件系统读取文件，SQL Server2005中读取二进制文件example.exe:</li>
+<li>–file-write=WFILE  编辑后端的数据库管理系统文件系统上的本地文件</li>
+<li>–file-dest=DFILE   后端的数据库管理系统写入文件的绝对路径</li>
+</ol>
+<h4 id="操作系统访问"><a href="#操作系统访问" class="headerlink" title="操作系统访问"></a>操作系统访问</h4><p>这些选项可以用于访问后端数据库管理系统的底层操作系统</p>
+<ol>
+<li>–os-cmd=OSCMD   执行操作系统命令（OSCMD）</li>
+<li>–os-shell          交互式的操作系统的shell</li>
+<li>–os-pwn          获取一个OOB shell，meterpreter或VNC</li>
+<li>–os-smbrelay       一键获取一个OOBshell，meterpreter或VNC</li>
+<li>–os-bof           存储过程缓冲区溢出利用</li>
+<li>–priv-esc          数据库进程用户权限提升</li>
+<li>–msf-path=MSFPATH  MetasploitFramework本地的安装路径</li>
+<li>–tmp-path=TMPPATH  远程临时文件目录的绝对路径</li>
+</ol>
+<h4 id="Windows注册表访问"><a href="#Windows注册表访问" class="headerlink" title="Windows注册表访问"></a>Windows注册表访问</h4><ul>
+<li>这些选项可以被用来访问后端数据库管理系统Windows注册表</li>
+</ul>
+<ol>
+<li>–reg-read          读一个Windows注册表项值</li>
+<li>–reg-add           写一个Windows注册表项值数据</li>
+<li>–reg-del           删除Windows注册表键值</li>
+<li>–reg-key=REGKEY    Windows注册表键</li>
+<li>–reg-value=REGVAL  Windows注册表项值</li>
+<li>–reg-data=REGDATA  Windows注册表键值数据</li>
+<li>–reg-type=REGTYPE  Windows注册表项值类型</li>
+</ol>
+<h4 id="一般选项"><a href="#一般选项" class="headerlink" title="一般选项"></a>一般选项</h4><ul>
+<li>这些选项可以用来设置一些一般的工作参数</li>
+</ul>
+<ol>
+<li>-s SESSIONFILE     保存和恢复检索会话文件的所有数据</li>
+<li>-t TRAFFICFILE      记录所有HTTP流量到一个文本文件中</li>
+<li>–batch            从不询问用户输入，使用所有默认配置。</li>
+<li>–binary-fields=..  结果字段具有二进制值(e.g.”digest”)</li>
+<li>–charset=CHARSET   强制字符编码</li>
+<li>–crawl=CRAWLDEPTH  从目标URL爬行网站</li>
+<li>–crawl-exclude=..  正则表达式从爬行页中排除</li>
+<li>–csv-del=CSVDEL    限定使用CSV输出 (default”,”)</li>
+<li>–dump-format=DU..  转储数据格式(CSV(default), HTML or SQLITE)</li>
+<li>–eta              显示每个输出的预计到达时间</li>
+<li>–flush-session     刷新当前目标的会话文件</li>
+<li>–forms           解析和测试目标URL表单</li>
+<li>–fresh-queries     忽略在会话文件中存储的查询结果</li>
+<li>–hex             使用DBMS Hex函数数据检索</li>
+<li>–output-dir=OUT..  自定义输出目录路径</li>
+<li>–parse-errors      解析和显示响应数据库错误信息</li>
+<li>–save=SAVECONFIG   保存选项到INI配置文件</li>
+<li>–scope=SCOPE    从提供的代理日志中使用正则表达式过滤目标</li>
+<li>–test-filter=TE..  选择测试的有效载荷和/或标题(e.g. ROW)</li>
+<li>–test-skip=TEST..  跳过试验载荷和/或标题(e.g.BENCHMARK)</li>
+<li>–update            更新sqlmap</li>
+</ol>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ol>
+<li>-z MNEMONICS        使用短记忆法 (e.g.”flu,bat,ban,tec=EU”)</li>
+<li>–alert=ALERT       发现SQL注入时，运行主机操作系统命令</li>
+<li>–answers=ANSWERS   当希望sqlmap提出输入时，自动输入自己想要的答案(e.g. “quit=N,follow=N”)，例如：sqlmap.py -u”<a href="http://192.168.22.128/get_int.php?id=1“–technique=E–answers=”extending=N”" target="_blank" rel="noopener">http://192.168.22.128/get_int.php?id=1“–technique=E–answers=”extending=N”</a> –batch</li>
+<li>–beep    发现sql注入时，发出蜂鸣声。</li>
+<li>–cleanup     清除sqlmap注入时在DBMS中产生的udf与表。</li>
+<li>–dependencies      Check formissing (non-core) sqlmap dependencies</li>
+<li>–disable-coloring  默认彩色输出，禁掉彩色输出。</li>
+<li>–gpage=GOOGLEPAGE 使用前100个URL地址作为注入测试，结合此选项，可以指定页面的URL测试</li>
+<li>–identify-waf      进行WAF/IPS/IDS保护测试，目前大约支持30种产品的识别</li>
+<li>–mobile     有时服务端只接收移动端的访问，此时可以设定一个手机的User-Agent来模仿手机登陆。</li>
+<li>–offline           Work inoffline mode (only use session data)</li>
+<li>–purge-output     从输出目录安全删除所有内容，有时需要删除结果文件，而不被恢复，可以使用此参数，原有文件将会被随机的一些文件覆盖。</li>
+<li>–skip-waf           跳过WAF／IPS / IDS启发式检测保护</li>
+<li>–smart            进行积极的启发式测试，快速判断为注入的报错点进行注入</li>
+<li>–sqlmap-shell      互动提示一个sqlmapshell</li>
+<li>–tmp-dir=TMPDIR    用于存储临时文件的本地目录</li>
+<li>–web-root=WEBROOT  Web服务器的文档根目录(e.g.”/var/www”)</li>
+<li>–wizard   新手用户简单的向导使用，可以一步一步教你如何输入针对目标注入</li>
+</ol>
+<h3 id="tamper"><a href="#tamper" class="headerlink" title="tamper"></a>tamper</h3><ol>
+<li>space2comment.py用/**/代替空格</li>
+<li>apostrophemask.py用utf8代替引号</li>
+<li>equaltolike.pylike代替等号</li>
+<li>space2dash.py　绕过过滤‘=’ 替换空格字符（”），（’–‘）后跟一个破折号注释，一个随机字符串和一个新行（’n’）</li>
+<li>greatest.py　绕过过滤’&gt;’ ,用GREATEST替换大于号。</li>
+<li>space2hash.py空格替换为#号,随机字符串以及换行符</li>
+<li>apostrophenullencode.py绕过过滤双引号，替换字符和双引号。</li>
+<li>halfversionedmorekeywords.py当数据库为mysql时绕过防火墙，每个关键字之前添加mysql版本评论</li>
+<li>space2morehash.py空格替换为 #号 以及更多随机字符串 换行符</li>
+<li>appendnullbyte.py在有效负荷结束位置加载零字节字符编码</li>
+<li>ifnull2ifisnull.py　绕过对IFNULL过滤,替换类似’IFNULL(A,B)’为’IF(ISNULL(A), B, A)’</li>
+<li>space2mssqlblank.py(mssql)空格替换为其它空符号</li>
+<li>base64encode.py　用base64编码替换</li>
+<li>space2mssqlhash.py　替换空格</li>
+<li>modsecurityversioned.py过滤空格，包含完整的查询版本注释</li>
+<li>space2mysqlblank.py　空格替换其它空白符号(mysql)</li>
+<li>between.py用between替换大于号（&gt;）</li>
+<li>space2mysqldash.py替换空格字符（”）（’ – ‘）后跟一个破折号注释一个新行（’ n’）</li>
+<li>multiplespaces.py围绕SQL关键字添加多个空格</li>
+<li>space2plus.py用+替换空格</li>
+<li>bluecoat.py代替空格字符后与一个有效的随机空白字符的SQL语句,然后替换=为like</li>
+<li>nonrecursivereplacement.py双重查询语句,取代SQL关键字</li>
+<li>space2randomblank.py代替空格字符（“”）从一个随机的空白字符可选字符的有效集</li>
+<li>sp_password.py追加sp_password’从DBMS日志的自动模糊处理的有效载荷的末尾</li>
+<li>chardoubleencode.py双url编码(不处理以编码的)</li>
+<li>unionalltounion.py替换UNION ALLSELECT UNION SELECT</li>
+<li>charencode.py　url编码</li>
+<li>randomcase.py随机大小写</li>
+<li>unmagicquotes.py宽字符绕过 GPCaddslashes</li>
+<li>randomcomments.py用/**/分割sql关键字</li>
+<li>charunicodeencode.py字符串 unicode 编码</li>
+<li>securesphere.py追加特制的字符串</li>
+<li>versionedmorekeywords.py注释绕过</li>
+<li>space2comment.py替换空格字符串(‘‘) 使用注释‘/**/’</li>
+<li>halfversionedmorekeywords.py关键字前加注释</li>
+</ol>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 fkrvro@163.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Yelog</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#tcp/ip协议','#http服务','#网络工具','#系统引导','#后渗透工具','#php','#Python','#文本处理','#web漏洞','#tcp/ip','#C&amp;C++','#shell编程','#文件处理','#面经','#注入工具','#环境搭建',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
